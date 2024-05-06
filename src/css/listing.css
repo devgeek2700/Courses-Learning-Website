@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pmcolor: #f1f0f9;
+    --sdcolor: #fefefe;
+    --ttcolor: #2e2e2e;
+}
+
+html,
+body {
+    width: 100%;
+    height: 150vh;
+    font-family: "Poppins", sans-serif;
+    color: var(--ttcolor);
+    background-color: var(--pmcolor);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.card {
+    width: 100%;
+    cursor: default;
+    padding: 1.25rem;
+    border-radius: 0.25rem;
+    background-color: var(--sdcolor);
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+}
+
+.card-img {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.25rem;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card-img figcaption {
+    background-color: var(--ttcolor);
+    color: var(--sdcolor);
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.card-title {
+    text-transform: capitalize;
+    margin: 0.75rem 0;
+}
+
+#spantxt {
+    font-weight: bold;
+    color: #CF5C3F;
+}
+
+p {
+    color: black;
+}
+
+a {
+    color: blue;
+}
+
+
+#headtxt {
+    font-size: 50px;
+    font-weight: bold;
+    color: #CF5C3F;
+    padding-top: 100px;
+}
+
+/* Navbar */
+
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+    display: none;
+}
+
+.navcontainer {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar {
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+}
+
+.logo {
+    order: 1;
+    font-size: 2.3rem;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.navbar a {
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+    color: #117964;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        opacity: 0.95;
+    }
+
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines {
+        display: block;
+    }
+
+    .navbar-container {
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar-container input[type="checkbox"] {
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .navbar-container .hamburger-lines {
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-container .hamburger-lines .line {
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }
+
+    .navbar-container .hamburger-lines .line1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line2 {
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .navbar-container .hamburger-lines .line3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navbar .menu-items {
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+
+    .navbar .menu-items li {
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
+    .navbar-container input[type="checkbox"]:checked~.menu-items {
+        transform: translateX(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
+        transform: rotate(45deg);
+    }
+
+    .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
+        transform: scaleY(0);
+    }
+
+    .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
+        transform: rotate(-45deg);
+    }
+
+}
+
+@media (max-width: 500px) {
+    .navbar-container input[type="checkbox"]:checked~.logo {
+        display: none;
+    }
+}
+
+
+/* input field */
+.serachCont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    border: 2px solid #CF5C3F;
+    overflow: auto;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    margin-top: 1%;
+    width: 60%;
+}
+
+
+.search input[type="text"] {
+    border: 0px;
+    width: 67%;
+    padding: 10px 10px;
+    background-color: transparent;
+}
+
+.search input[type="text"]:focus {
+    outline: 0;
+}
+
+.search input[type="submit"] {
+    border: 0px;
+    background: none;
+    background-color: #CF5C3F;
+    color: #fff;
+    float: right;
+    padding: 10px;
+    border-radius-top-right: 5px;
+    -moz-border-radius-top-right: 5px;
+    -webkit-border-radius-top-right: 5px;
+    border-radius-bottom-right: 5px;
+    -moz-border-radius-bottom-right: 5px;
+    -webkit-border-radius-bottom-right: 5px;
+    cursor: pointer;
+}
+
+.fa-magnifying-glass {
+    margin-left: 20px;
+}
+
+
+@media only screen and (min-width : 150px) and (max-width : 780px) {
+    .search {
+        width: 95%;
+        margin: 0 auto;
+    }
+
+}
